@@ -2,6 +2,8 @@
 ## 介绍
 基于Vuepress2的插件，它可以帮助你在编写组件库文档的时候增加示例代码和预览。
 
+查看文档和示例：[https://demo-block.seepine.com](https://demo-block.seepine.com)或克隆项目运行
+
 ## 安装
 
 ### 安装 VuePress
