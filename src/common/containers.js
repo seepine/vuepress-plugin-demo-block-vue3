@@ -28,7 +28,14 @@ module.exports = (options) => {
         if (tokens[idx].nesting === 1) {
           const description = m && m.length > 1 ? m[1] : "";
           const sourceFileToken = tokens[idx + 2];
-          const sourceFile = sourceFileToken.children[0].content ?? "";
+          let sourceFile = "";
+          if (
+            sourceFileToken.children &&
+            sourceFileToken.children[0] &&
+            sourceFileToken.children[0].content
+          ) {
+            sourceFile = sourceFileToken.children[0].content;
+          }
           let source = "";
           if (sourceFileToken.type === "inline") {
             source = fs.readFileSync(
