@@ -8,16 +8,16 @@
 
 ### 安装插件
 
-使用 `yarn` 安装 `vuepress2-plugin-demo-block` 插件
+使用 `yarn` 安装 `vuepress-plugin-demo-block-vue3` 插件
 
 ```bash
-yarn add vuepress2-plugin-demo-block -D
+yarn add vuepress-plugin-demo-block-vue3 -D
 ```
 
 或者使用 `npm` 安装它：
 
 ```bash
-npm i vuepress2-plugin-demo-block --save-dev
+npm i vuepress-plugin-demo-block-vue3 --save-dev
 ```
 
 如果你的网络环境不佳，推荐使用 [cnpm](https://github.com/cnpm/cnpm)。
@@ -32,7 +32,7 @@ npm i vuepress2-plugin-demo-block --save-dev
 module.exports = {
   ...
   plugins: [[
-    'vuepress2-plugin-demo-block',
+    'vuepress-plugin-demo-block-vue3',
     {
       componentsDir: path.resolve(__dirname, './../examples')
     }

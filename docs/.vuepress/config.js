@@ -2,7 +2,7 @@ const { path } = require("@vuepress/utils");
 
 module.exports = {
   host: "0.0.0.0",
-  title: "vuepress2-plugin-demo-block",
+  title: "vuepress-plugin-demo-block-vue3",
   description: "编写组件库文档的增加 Vue 展示和代码示例",
   port: 6688,
   // head: [
@@ -35,7 +35,7 @@ module.exports = {
       },
       {
         text: "GitHub",
-        link: "https://github.com/seepine/vuepress2-plugin-demo-block.git",
+        link: "https://github.com/seepine/vuepress-plugin-demo-block-vue3.git",
       },
     ],
     sidebar: {

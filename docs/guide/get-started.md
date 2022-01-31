@@ -30,3 +30,4 @@ button/base
 
 - [vuepress-plugin-demo-container](https://github.com/calebman/vuepress-plugin-demo-container)
 - [Element Plus ](https://element-plus.gitee.io/zh-CN/component/alert.html)
+- [vuepress-plugin-demo-container-vue3](https://github.com/cjSound/vuepress-plugin-demo-container-vue3)

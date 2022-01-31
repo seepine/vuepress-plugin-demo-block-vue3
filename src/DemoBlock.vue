@@ -189,8 +189,6 @@ export default {
 .demo-block .meta {
   background-color: var(--c-bg-light);
   border: solid 1px var(--c-border);
-  /* border-left: solid 1px var(--c-border); */
-  /* border-right: solid 1px var(--c-border); */
   margin: -1px;
   border-radius: 3px;
   overflow: hidden;
@@ -199,6 +197,7 @@ export default {
 }
 .dark .demo-block .meta {
   background-color: var(--c-bg-lighter);
+  margin: 0;
 }
 .demo-block .description {
   padding: 10px 20px;
