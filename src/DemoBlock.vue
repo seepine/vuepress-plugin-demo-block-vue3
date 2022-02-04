@@ -109,7 +109,7 @@ export default {
           this.$el.getElementsByClassName("code-content")[0].clientHeight +
           30
         );
-      } 
+      }
       return this.$el.getElementsByClassName("code-content")[0].clientHeight + 20;
     }
   },
@@ -129,11 +129,15 @@ export default {
       }, 1500);
     },
     scrollHandler() {
-      const { top, bottom, left } = this.$refs.meta.getBoundingClientRect();
-      this.fixedControl =
-        bottom > document.documentElement.clientHeight &&
-        top + 44 <= document.documentElement.clientHeight;
-      this.$refs.control.style.left = this.fixedControl ? `${left + 1}px` : "0";
+      this.$nextTick(() => {
+        if (this.$refs && this.$refs.meta && this.$refs.meta.getBoundingClientRect) {
+          const { top, bottom, left } = this.$refs.meta.getBoundingClientRect();
+          this.fixedControl =
+            bottom > document.documentElement.clientHeight &&
+            top + 44 <= document.documentElement.clientHeight;
+          this.$refs.control.style.left = this.fixedControl ? `${left + 1}px` : "0";
+        }
+      })
     },
     removeScrollHandler() {
       this.scrollParent &&
@@ -245,7 +249,7 @@ export default {
   -webkit-font-smoothing: antialiased;
 }
 .demo-block .demo-block-control .caret-top::before {
-  margin-top: 2px;
+  margin-top: 6px;
   content: "";
   position: absolute;
   right: 50%;
@@ -256,7 +260,7 @@ export default {
   border-left: 6px solid transparent;
 }
 .demo-block .demo-block-control .caret-bottom::before {
-  margin-top: 2px;
+  margin-top: 6px;
   content: "";
   position: absolute;
   right: 50%;
