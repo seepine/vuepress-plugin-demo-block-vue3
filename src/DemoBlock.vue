@@ -201,7 +201,6 @@ export default {
 }
 .dark .demo-block .meta {
   background-color: var(--c-bg-lighter);
-  margin: 0;
 }
 .demo-block .description {
   padding: 10px 20px;
