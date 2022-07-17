@@ -1,25 +1,18 @@
-const { path } = require("@vuepress/utils");
-
+const blockDemo = require("./../../src");
+const { defaultTheme } = require("@vuepress/theme-default");
+const { viteBundler } = require("@vuepress/bundler-vite");
 module.exports = {
   host: "0.0.0.0",
   title: "vuepress-plugin-demo-block-vue3",
   description: "编写组件库文档的增加 Vue 展示和代码示例",
   port: 6688,
-  // head: [
-  //   [
-  //     "link",
-  //     {
-  //       rel: "icon",
-  //       href: "/favicon.ico",
-  //     },
-  //   ],
-  // ],
   locales: {
     "/": {
-      lang: "zh-CN", // 将会被设置为 <html> 的 lang 属性
+      lang: "zh-CN",
     },
   },
-  themeConfig: {
+  bundler: viteBundler({}),
+  theme: defaultTheme({
     navbar: [
       {
         text: "首页",
@@ -56,13 +49,12 @@ module.exports = {
         },
       ],
     },
-  },
+  }),
   plugins: [
     [
-      require("./../../src"),
-      {
-        componentsDir: path.resolve(__dirname, "./../examples"),
-      },
+      blockDemo({
+        path: __dirname,
+      }),
     ],
   ],
   markdown: {

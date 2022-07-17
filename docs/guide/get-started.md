@@ -13,9 +13,11 @@ Demo Container vue3 参考了 Element Plus UI 的文档渲染，实现了和它�
 ## 它是如何工作的？
 Demo Container 使用 Vuepress 的 [chainMarkdown、extendMarkdown API](https://vuepress.vuejs.org/zh/plugin/option-api.html#extendmarkdown) 拓展了其内部的 markdown 对象，并做了以下操作：
 - 动态注册组件，通过扫描文件夹，批量注册文件夹下所有组件，**例如 扫描examples**
-    - examples
+    - docs
+      - examples
         - button
-            - base.vue
+          - base.vue
+          - disabled.vue
 - 基于 markdown-it-container 构建了一个识别以下代码块的插件  ``示例也可以参考`` [Element Plus](https://github.com/element-plus/element-plus/blob/dev/docs/en-US/component/alert.md) ，代码块中的内容为**动态注册组件**相关文件路径，**示例如下**
 ```
 :::demo

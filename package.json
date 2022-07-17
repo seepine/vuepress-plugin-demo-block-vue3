@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-demo-block-vue3",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Vuepress2 plugin for demo block support vue3.",
   "main": "src/index.js",
   "scripts": {
@@ -16,22 +16,23 @@
     "url": "https://github.com/seepine/vuepress-plugin-demo-block-vue3.git"
   },
   "dependencies": {
-    "escape-html": "1.0.3",
-    "markdown-it": "^12.3.2",
-    "markdown-it-container": "^3.0.0"
+    "escape-html": "~1.0.3",
+    "markdown-it": "~13.0.0",
+    "markdown-it-container": "~3.0.0"
   },
   "devDependencies": {
-    "vuepress-vite": "^2.0.0-beta.35"
+    "vuepress": "2.0.0-beta.49"
   },
   "keywords": [
-    "documentation",
+    "vuepress",
+    "vuepress2",
+    "vuepress-plugin",
     "plugin",
     "vue",
     "vue3",
-    "vuepress",
-    "vuepress2",
     "demo",
-    "block"
+    "block",
+    "documentation"
   ],
   "author": "seepine",
   "license": "MIT",

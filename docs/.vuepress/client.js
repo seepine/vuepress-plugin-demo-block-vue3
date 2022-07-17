@@ -1,4 +1,4 @@
-import { defineClientAppEnhance } from "@vuepress/client";
+import { defineClientConfig } from "@vuepress/client";
 
 // import Antd from "ant-design-vue";
 // import "ant-design-vue/dist/antd.css";
@@ -10,9 +10,13 @@ import { defineClientAppEnhance } from "@vuepress/client";
 // import ArcoVueIcon from '@arco-design/web-vue/es/icon';
 // import '@arco-design/web-vue/dist/arco.css';
 
-export default defineClientAppEnhance(({ app, router, siteData }) => {
-  // app.use(Antd)
-  // app.use(ElementPlus)
-  // app.use(ArcoVue);
-  // app.use(ArcoVueIcon);
+export default defineClientConfig({
+  enhance({ app }) {
+    // app.use(Antd)
+    // app.use(ElementPlus)
+    // app.use(ArcoVue);
+    // app.use(ArcoVueIcon);
+  },
+  setup() {},
+  rootComponents: [],
 });

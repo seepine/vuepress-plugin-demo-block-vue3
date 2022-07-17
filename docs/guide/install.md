@@ -6,21 +6,13 @@
 
 请参考 Vuepress2 官方文档，[点此查看](https://v2.vuepress.vuejs.org/zh/guide/getting-started.html)
 
+建议锁定版本`2.0.0-beta.49`，其他版本未测试不保证可使用。
+
 ### 安装插件
 
-使用 `yarn` 安装 `vuepress-plugin-demo-block-vue3` 插件
-
 ```bash
-yarn add vuepress-plugin-demo-block-vue3 -D
+npm i vuepress-plugin-demo-block-vue3 -D
 ```
-
-或者使用 `npm` 安装它：
-
-```bash
-npm i vuepress-plugin-demo-block-vue3 --save-dev
-```
-
-如果你的网络环境不佳，推荐使用 [cnpm](https://github.com/cnpm/cnpm)。
 
 ### 配置插件
 
@@ -29,26 +21,24 @@ npm i vuepress-plugin-demo-block-vue3 --save-dev
 - **配置扫描路径** `componentsDir`
 
 ```js
+const blockDemo = require("vuepress-plugin-demo-block-vue3");
 module.exports = {
   ...
   plugins: [[
-    'vuepress-plugin-demo-block-vue3',
-    {
-      componentsDir: path.resolve(__dirname, './../examples')
-    }
+    blockDemo({
+      // 设置路径
+      path: __dirname,
+    })
   ]],
   ...
 }
 ```
-::: warning 注意
-componentsDir 必传，为动态注册组件的基础路径，目录结构可参考 element-plus
-:::
 
 ## 引入组件
-可在`docs/.vuepress/clientAppEnhance.js`引入组件，需要注意的是，第三方库可能还需要依赖，例如`ant-design-vue`还需要`less`和`less-loader`，请自行安装
+可在`docs/.vuepress/client.js`引入组件，需要注意的是，第三方库可能还需要依赖，例如`ant-design-vue`还需要`less`和`less-loader`，请自行安装
 
 ```js
-import { defineClientAppEnhance } from "@vuepress/client";
+import { defineClientConfig } from '@vuepress/client'
 
 // import Antd from "ant-design-vue";
 // import "ant-design-vue/dist/antd.css";
@@ -60,11 +50,15 @@ import { defineClientAppEnhance } from "@vuepress/client";
 // import ArcoVueIcon from '@arco-design/web-vue/es/icon';
 // import '@arco-design/web-vue/dist/arco.css';
 
-export default defineClientAppEnhance(({ app, router, siteData }) => {
-  // app.use(Antd)
-  // app.use(ElementPlus)
-  // app.use(ArcoVue);
-  // app.use(ArcoVueIcon);
-});
+export default defineClientConfig({
+  enhance({ app, router, siteData }) {
+      // app.use(Antd)
+      // app.use(ElementPlus)
+      // app.use(ArcoVue);
+      // app.use(ArcoVueIcon);
+  },
+  setup() {},
+  rootComponents: [],
+})
 ```
 
